@@ -8,8 +8,8 @@
     <ProjectGuid>{EF31E2CF-BECC-4418-90E3-1B406C33AEDF}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Qishi_Tester</RootNamespace>
-    <AssemblyName>Qishi_Tester</AssemblyName>
+    <RootNamespace>DNS_Tester</RootNamespace>
+    <AssemblyName>DNS_Tester</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -82,6 +82,9 @@
     <Compile Include="DNSTester.xaml.cs">
       <DependentUpon>DNSTester.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UMessageBox.xaml.cs">
+      <DependentUpon>UMessageBox.xaml</DependentUpon>
+    </Compile>
     <Page Include="Controls\NewTextBox.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -97,6 +100,10 @@
     <Page Include="DNSTester.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UMessageBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -124,12 +131,6 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Image\nav1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Image\background.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Image\words1.png" />
   </ItemGroup>
   <ItemGroup>
@@ -141,14 +142,7 @@
     <Resource Include="Image\btn2.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Image\words2.png" />
-    <Resource Include="Image\words3.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Image\btn3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Image\line1.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\words5.png" />
@@ -158,33 +152,10 @@
     <Resource Include="Image\logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Image\words7.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Image\words8.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Image\words9.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Image\slogan .png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Image\words10.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Image\nav4.png" />
-    <Resource Include="Image\nav5.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Image\words11.png" />
-    <Resource Include="Image\words12.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Image\words13.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Image\words14.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\btn4.png" />
@@ -193,11 +164,13 @@
     <Resource Include="Image\ico.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Image\words15.png" />
     <Resource Include="Image\background2.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\words16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\words17.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

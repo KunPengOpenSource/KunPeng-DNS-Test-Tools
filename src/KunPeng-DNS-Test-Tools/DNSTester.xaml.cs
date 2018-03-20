@@ -19,7 +19,7 @@ using System.ComponentModel;
 using System.Windows.Threading;
 using System.Threading;
 
-namespace Qishi_Tester
+namespace DNS_Tester
 {
     /// <summary>
     /// Window1.xaml 的交互逻辑
@@ -75,7 +75,7 @@ namespace Qishi_Tester
                 MyDns mydns = new MyDns();
                 if (!mydns.Search(_host, QueryType.A, _dnsname, null))
                 {
-                    MessageBox.Show(mydns.header.RCODE.ToString());
+                    UMessageBox.Show("提示", mydns.header.RCODE.ToString());
                     return;
                 }
                 foreach (MyDnsRecord item in mydns.record.Records)
@@ -84,7 +84,7 @@ namespace Qishi_Tester
                 }
                 if (!mydns.Search(_host, QueryType.MX, _dnsname, null))
                 {
-                    MessageBox.Show(mydns.header.RCODE.ToString());
+                    UMessageBox.Show("提示", mydns.header.RCODE.ToString());
                     return;
                 }
                 foreach (MyDnsRecord item in mydns.record.Records)
@@ -93,7 +93,7 @@ namespace Qishi_Tester
                 }
                 if (!mydns.Search(_host, QueryType.CNAME, _dnsname, null))
                 {
-                    MessageBox.Show(mydns.header.RCODE.ToString());
+                    UMessageBox.Show("提示", mydns.header.RCODE.ToString());
                     return;
                 }
                 foreach (MyDnsRecord item in mydns.record.Records)
@@ -102,7 +102,7 @@ namespace Qishi_Tester
                 }
                 if (!mydns.Search(_host, QueryType.TXT, _dnsname, null))
                 {
-                    MessageBox.Show(mydns.header.RCODE.ToString());
+                    UMessageBox.Show("提示", mydns.header.RCODE.ToString());
                     return;
                 }
                 foreach (MyDnsRecord item in mydns.record.Records)
@@ -159,14 +159,14 @@ namespace Qishi_Tester
             {
                 if (!IsValidHttp(txDomain1.Text.Trim()))
                 {
-                    MessageBox.Show("域名格式不正确!请重新输入。");
+                    UMessageBox.Show("提示", "域名格式不正确!请重新输入。");
                     return;
                 }
                 if (ckDNSserver.IsChecked == true)
                 {
                     if (!IsValidIp(txDNSserver.Text.Trim()))
                     {
-                        MessageBox.Show("DNS格式不正确!请重新输入。");
+                        UMessageBox.Show("提示", "DNS格式不正确!请重新输入。");
                         return;
                     }
                     else
@@ -202,7 +202,7 @@ namespace Qishi_Tester
             }
             catch (Exception ex)
             {
-                MessageBox.Show(" 无法处理请求,因为以下问题发生:\n" + ex.Message, "异常提示");  //这里是异常处理  例如网络连接或主机不能解析等其它问题就显示出来给用户
+                UMessageBox.Show("异常提示", " 无法处理请求,因为以下问题发生:\n" + ex.Message);  //这里是异常处理  例如网络连接或主机不能解析等其它问题就显示出来给用户
             }
 
         }
@@ -240,7 +240,7 @@ namespace Qishi_Tester
 
             if (!IsValidHttp(txDomain2.Text.Trim()))
             {
-                MessageBox.Show("域名格式不正确!请重新输入。");
+                UMessageBox.Show("提示","域名格式不正确!请重新输入。");
                 return;
             }
             state = 1;
@@ -355,6 +355,9 @@ namespace Qishi_Tester
                 canvas2.Visibility = Visibility.Hidden;
                 canvas3.Visibility = Visibility.Hidden;
                 canvas4.Visibility = Visibility.Hidden;
+                imgDNStest.Visibility = Visibility.Hidden;
+                imgWhois.Visibility = Visibility.Visible;
+                
             }
         }
 
@@ -367,6 +370,8 @@ namespace Qishi_Tester
                 canvas2.Visibility = Visibility.Hidden;
                 canvas3.Visibility = Visibility.Visible;
                 canvas4.Visibility = Visibility.Hidden;
+                imgDNStest.Visibility = Visibility.Visible;
+                imgWhois.Visibility = Visibility.Hidden;
             }
         }
 
@@ -379,6 +384,8 @@ namespace Qishi_Tester
                 canvas2.Visibility = Visibility.Hidden;
                 canvas3.Visibility = Visibility.Hidden;
                 canvas4.Visibility = Visibility.Hidden;
+                imgDNStest.Visibility = Visibility.Hidden;
+                imgWhois.Visibility = Visibility.Hidden;
             }
         }
 
